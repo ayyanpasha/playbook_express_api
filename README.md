@@ -1,6 +1,9 @@
-# Express Mongoose API Project
+# PlayGround Express Mongoose API Project
 
-This project is an example of an Express.js API using Mongoose for MongoDB interactions. It provides endpoints for user authentication and managing containers.
+This is made playground:
+- FrontEnd: https://github.com/ayyanpasha/codedamn-frontend.git
+- Dockerized Playground: https://github.com/ayyanpasha/playbook_docker_container_image.git
+- Communication between client and Dockerized image: https://github.com/ayyanpasha/playbook_docker_proxy_image.gitThis project is an example of an Express.js API using Mongoose for MongoDB interactions. It provides endpoints for user authentication and managing containers.
 
 ## Project Structure
 
