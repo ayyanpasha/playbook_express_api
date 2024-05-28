@@ -58,9 +58,8 @@ Contains routes for managing containers:
 Module for connecting to the MongoDB database. It reads connection details from the `.env` file and establishes a connection.
 
 ## Environment Variables
-1. The project uses environment variables for configuration. Here are the required variables:
+1. **Environment Variables:**
    ```bash
-   EXPRESS_PORT: 2900.
    MONGO_DB_URI: mongodb://localhost:27017
    JWT_SECRET: Secret key for JWT token encryption.
    ssh_username: SSH username of local server.
