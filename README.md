@@ -60,6 +60,7 @@ Module for connecting to the MongoDB database. It reads connection details from 
 ## Environment Variables
 1. **Environment Variables:**
    ```bash
+   EXPRESS_PORT: 2900
    MONGO_DB_URI: mongodb://localhost:27017
    JWT_SECRET: Secret key for JWT token encryption.
    ssh_username: SSH username of local server.
