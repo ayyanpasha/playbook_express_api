@@ -6,21 +6,27 @@ import Container from "../model/Container";
 import User from "../model/User";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import fs from 'fs';
 
 dotenv.config();
 
 const router = express.Router();
 
 // SSH connection settings
-const sshConfig: ConnectConfig = {
-  host: process.env.ssh_hostname,
-  port: 22,
-  username: process.env.ssh_username,
-  password: process.env.ssh_password,
-};
 
 // ROUTE 1: Create new Document: POST-'/api/document/new'
 router.post("/new", fetchUser, async (req: Request, res: Response) => {
+
+  const privateKey = process.env.privateKey;
+  if(privateKey === null || privateKey === undefined) {
+    return res.status(500).json({ errors: "Internal Server Error" });
+  }
+  const sshConfig: ConnectConfig = {
+    host: process.env.ssh_hostname,
+    port: 22,
+    username: process.env.ssh_username,
+    privateKey: fs.readFileSync(privateKey, 'utf8'),
+  };
   try {
     console.log(1);
     //Create document, Permission & Admin
@@ -68,7 +74,7 @@ router.post("/new", fetchUser, async (req: Request, res: Response) => {
   }
 });
 
-// ROUTE 2: Read Document: GET-'/api/document/id/:id'
+// ROUTE 2: Read Container: GET-'/api/container/id/:id'
 router.get("/id/:id", async (req: Request, res: Response) => {
   try {
     const containerId = req.params.id;
