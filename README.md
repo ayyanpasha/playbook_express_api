@@ -70,6 +70,7 @@ Module for connecting to the MongoDB database. It reads connection details from 
    ssh_username=SSH username of local server.
    ssh_password=SSH password of local server.
    ssh_hostname=Hostname of the local SSH server.
+   privateKey=path to private key
 
 ## Setup
 
